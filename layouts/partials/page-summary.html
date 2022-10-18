@@ -11,15 +11,13 @@
             <img src={{.Params.image}}>
         </figure>
     </a>
-    <h1 class="title">
-        <a href="{{ .Permalink }}" itemprop="headline">{{ .Title }}</a>
+    <h1 class="title has-text-black-ter">
+        <a href="{{ .Permalink }}" itemprop="headline">{{ .Params.title }}</a>
     </h1>
     {{ if .Description }}
         <blockquote itemprop="about">{{ .Description }}</blockquote>
     {{ end }}
-    <h2 class="content" itemprop="description">
-        {{ .Summary }}
-    </h2>
+
 </div>
 <div class="button">
     <a href="{{ .RelPermalink }}" itemprop="url">Read More…</a>
