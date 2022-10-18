@@ -1,0 +1,22 @@
+<section class="section is-small">
+    <div class="tile is-ancestor">
+        {{ $paginator := .Paginate (where site.RegularPages "Type" "posts") }}
+        {{ range $paginator.Pages }}
+            <div class="tile is-parent">
+                <article class="tile is-child box pl-4">
+                    {{if .Params.image}}
+                        <a href="{{.Permalink}}">
+                            <figure class="image is-256x256">
+                                <img src={{.Params.image}}>
+                            </figure>
+                        </a>
+                    {{end}}
+                    <div class="block">
+                        <a href="{{.Permalink}}"><p class="title has-text-black">{{ .Title}}</p></a>
+                        <p class="subtitle has-text-dark">{{.Params.description}}</p>
+                    </div>
+                </article>
+            </div>
+        {{ end }}
+    </div>
+</section>
